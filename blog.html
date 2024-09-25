@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme ="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- DaisyUI and Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <header class="sticky top-0">
+        <nav class="bg-slate-300">
+            <div class="navbar bg-slate-300 h-28 py-8 lg:container mx-auto">
+                <div class="navbar-start">
+                    <button class="bg-[#b4f461] border-none btn py-0 md:px-8" onclick="window.location.href='./index.html'">Home</button>
+                </div>
+                <div class="navbar-center">
+                  <img src="./assets/logo.png" alt="">
+                  <h1 class="font-semibold text-xl ml-2 hidden md:block">Donate Bangladesh</h1>
+                </div>
+                <div class="navbar-end">
+                  <img src="./assets/coin.png" alt="">
+                  <h4 id="current-balance" class="font-semibold text-sm md:text-xl ml-2 mr-1">10000</h4>
+                  <h4 class="font-semibold text-sm md:text-xl hidden md:block">BDT.</h4>
+                </div>
+              </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mx-auto space-y-3 mt-12">
+            <h1 class="font-semibold text-lg lg:text-3xl mb-8 text-center">
+                Frequently Asked Questions
+            </h1>
+            <div class="collapse collapse-plus bg-base-200">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+                <div class="collapse-content">
+                  <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects, allowing developers to manipulate the content, structure, and style of a webpage programmatically.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-200">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+                <div class="collapse-content">
+                  <p>You can select elements from the DOM using various JavaScript methods. For example, document.getElementById('myId') retrieves an element by its unique ID, while document.querySelector('.myClass') selects the first element that matches a specified CSS selector. If you need multiple elements with the same class, document.getElementsByClassName('myClass') returns a live HTMLCollection of all matching elements. For static collections, document.querySelectorAll('div.myClass') selects all matching elements, making it easy to manipulate the DOM dynamically.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-200">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why it is so usefull?</div>
+                <div class="collapse-content">
+                  <p>Event delegation is a technique in JavaScript that leverages the event bubbling mechanism to handle events more efficiently. Instead of attaching an event listener to each individual child element, you attach a single event listener to a parent element. This parent listens for events that bubble up from its children, allowing you to handle events for multiple child elements with one listener.</p>
+                </div>
+            </div>
+            <div class="collapse collapse-plus bg-base-200">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title text-xl font-medium">How do you manipulate an elements attributes and styles using DOM?</div>
+                <div class="collapse-content">
+                  <p>ou can manipulate an element's attributes and styles using JavaScript and the DOM API in various ways. To change attributes, you can use methods like getAttribute() to retrieve a value, setAttribute() to update or add an attribute, and removeAttribute() to delete one. For standard attributes, accessing properties directly, like element.id or element.className, is also effective. When it comes to styles, the style property allows you to set or get inline CSS styles, and you can apply multiple styles at once using cssText. Additionally, the classList property provides methods like add(), remove(), and toggle() to manage CSS classes easily. These techniques empower you to create dynamic and interactive web experiences.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+
+    
+</body>
+</html>

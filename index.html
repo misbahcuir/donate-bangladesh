@@ -17,7 +17,7 @@
         <nav class="bg-slate-300">
             <div class="navbar bg-slate-300 h-28 py-8 lg:container mx-auto">
                 <div class="navbar-start">
-                    <button class="bg-[#b4f461] border-none btn py-0 md:px-8">Blog</button>
+                    <button class="bg-[#b4f461] border-none btn py-0 md:px-8" onclick="window.location.href='./blog.html'">Blog</button>
                 </div>
                 <div class="navbar-center">
                   <img src="./assets/logo.png" alt="">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="navbar-end">
                   <img src="./assets/coin.png" alt="">
-                  <h4 class="font-semibold text-sm md:text-xl ml-2 mr-1">10000</h4>
+                  <h4 id="current-balance" class="font-semibold text-sm md:text-xl ml-2 mr-1">10000</h4>
                   <h4 class="font-semibold text-sm md:text-xl hidden md:block">BDT.</h4>
                 </div>
               </div>
@@ -34,8 +34,8 @@
         <div class="bg-[#f0f8ff] mb-12">
             <div class="container mx-auto">
                 <div class="flex justify-center items-center py-8 gap-4">
-                    <button class="bg-[#b4f461] border border-[#b4f461] btn py-0 px-8">Donation</button>
-                    <button class="btn btn-outline py-0 px-8 hover:bg-[#b4f461] hover:text-black">History</button>
+                    <button id="donate-button" class="bg-[#b4f461] hover:bg-[#b4f461] border border-[#b4f461] btn py-0 px-8">Donation</button>
+                    <button id="history-button" class="btn bg-transparent py-0 px-8 hover:bg-[#b4f461] hover:text-black">History</button>
                 </div>
             </div>
             
@@ -43,7 +43,7 @@
      </header>
 
      <main>
-        <div class="lg:container mx-auto space-y-6">
+        <div id="donation-container" class="lg:container mx-auto space-y-6">
             <!-- Donation 1 -->
             <div class="border p-4 rounded-xl flex flex-col md:flex-row justify-center items-center gap-6">
                 <div class="w-full">
@@ -52,7 +52,7 @@
                 <div class="space-y-4 w-fit">
                     <div class="bg-gray-300 flex p-3 rounded-md w-40">
                         <img src="./assets/coin.png" alt="">
-                        <h4 class="font-semibold text-lg ml-2 mr-1">4093</h4>
+                        <h4 id="donated-amount-noakhali" class="font-semibold text-lg ml-2 mr-1">4093</h4>
                         <h4 class="font-semibold text-lg">BDT.</h4>
                     </div>
                     <div class="space-y-2">
@@ -64,8 +64,8 @@
                         </p>
                     </div>
                     <div class="space-y-2">
-                        <input type="text" class="w-full p-3 border rounded-md" placeholder="Type Your Amount Here">
-                        <button class="bg-[#b4f461] border border-[#b4f461] btn py-0 px-8 w-full" onclick="my_modal_1.showModal()">Donate Now</button>
+                        <input id="new-amount-noakhali" type="text" class="w-full p-3 border rounded-md" placeholder="Type Your Amount Here">
+                        <button id="donate-button-noakhali" class="bg-[#b4f461] border border-[#b4f461] btn py-0 px-8 w-full" >Donate Now</button>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 <div class="space-y-4 w-fit">
                     <div class="bg-gray-300 flex p-3 rounded-md w-40">
                         <img src="./assets/coin.png" alt="">
-                        <h4 class="font-semibold text-lg ml-2 mr-1">4093</h4>
+                        <h4 id="donated-amount-feni" class="font-semibold text-lg ml-2 mr-1">2509</h4>
                         <h4 class="font-semibold text-lg">BDT.</h4>
                     </div>
                     <div class="space-y-2">
@@ -90,8 +90,8 @@
                         </p>
                     </div>
                     <div class="space-y-2">
-                        <input type="text" class="w-full p-3 border rounded-md" placeholder="Type Your Amount Here">
-                        <button class="bg-[#b4f461] border border-[#b4f461] btn py-0 px-8 w-full">Donate Now</button>
+                        <input id="new-amount-feni" type="text" class="w-full p-3 border rounded-md" placeholder="Type Your Amount Here">
+                        <button id="donate-button-feni" class="bg-[#b4f461] border border-[#b4f461] btn py-0 px-8 w-full">Donate Now</button>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                 <div class="space-y-4 w-fit">
                     <div class="bg-gray-300 flex p-3 rounded-md w-40">
                         <img src="./assets/coin.png" alt="">
-                        <h4 class="font-semibold text-lg ml-2 mr-1">4093</h4>
+                        <h4 id="donated-amount-protest" class="font-semibold text-lg ml-2 mr-1">10232</h4>
                         <h4 class="font-semibold text-lg">BDT.</h4>
                     </div>
                     <div class="space-y-2">
@@ -115,12 +115,18 @@
                             The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.                        </p>
                     </div>
                     <div class="space-y-2">
-                        <input type="text" class="w-full p-3 border rounded-md" placeholder="Type Your Amount Here">
-                        <button class="bg-[#b4f461] border border-[#b4f461] btn py-0 px-8 w-full">Donate Now</button>
+                        <input id="new-amount-protest" type="text" class="w-full p-3 border rounded-md" placeholder="Type Your Amount Here">
+                        <button id="donate-button-protest" class="bg-[#b4f461] border border-[#b4f461] btn py-0 px-8 w-full">Donate Now</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- History -->
+        <div id="history-container" class="lg:container mx-auto space-y-4 mt-12 hidden">
+            
+        </div>
+
      </main>
 
      <footer class="h-24 bg-[#f0f8ff] mt-12">
